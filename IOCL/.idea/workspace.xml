@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="579e2aab-11a8-4aa1-88f0-821b89d7f400" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\software\mavenrespority" />
+        <option name="mavenHome" value="F:/software/Maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="F:\software\Maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="246BsPqxUPVw4uxpoCMP0DxgdJT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RunManager">
+    <configuration name="IOCTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IOCL" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mayuan.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mayuan.test" />
+      <option name="MAIN_CLASS_NAME" value="com.mayuan.test.IOCTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.IOCTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="579e2aab-11a8-4aa1-88f0-821b89d7f400" name="Default Changelist" comment="" />
+      <created>1642941361082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642941361082</updated>
+      <workItem from="1642941362308" duration="540000" />
+      <workItem from="1642943060007" duration="1348000" />
+      <workItem from="1642946303935" duration="905000" />
+      <workItem from="1644503354328" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="484" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1642941478548">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1642941478548" />
+    <state width="1493" height="187" key="GridCell.Tab.0.bottom" timestamp="1642946215213">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="187" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1642946215213" />
+    <state width="1493" height="187" key="GridCell.Tab.0.center" timestamp="1642946215212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="187" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1642946215212" />
+    <state width="1493" height="187" key="GridCell.Tab.0.left" timestamp="1642946215212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="187" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1642946215212" />
+    <state width="1493" height="187" key="GridCell.Tab.0.right" timestamp="1642946215212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="187" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1642946215212" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1642946215203">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1642946215203" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1642946215202">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1642946215202" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1642946215202">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1642946215202" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1642946215202">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1642946215202" />
+    <state x="449" y="95" key="spring file set editor" timestamp="1642941424336">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1642941424336" />
+  </component>
+</project>
