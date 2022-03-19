@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="school" class="com.mayuan.School">
+        <constructor-arg name="students">
+            <ref bean="students"></ref>
+        </constructor-arg>
+        <constructor-arg name="teachers">
+            <ref bean="teachers"></ref>
+        </constructor-arg>
+    </bean>
+    <bean id="students" class="com.mayuan.Students">
+        <property name="name">
+            <value type="java.lang.String">yiwen</value>
+        </property>
+    </bean>
+    <bean id="teachers" class="com.mayuan.Teachers">
+        <property name="name">
+            <value type="java.lang.String">zhangsan</value>
+        </property>
+    </bean>
+</beans>
