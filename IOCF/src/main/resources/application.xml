@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--静态工厂方法 工厂不需要实例化-->
+    <bean id="news11" class="com.mayuan.spring.StaticFactory" factory-method="getNews">
+        <constructor-arg value="news1"/>
+    </bean>
+    <bean id="news12" class="com.mayuan.spring.StaticFactory" factory-method="getNews">
+        <constructor-arg value="news2"/>
+    </bean>
+
+    <!--实例工厂方法是先将工厂实例化-->
+    <bean id="instanceFactory" class="com.mayuan.spring.InstanceFactory"/>
+
+    <bean id="news21" factory-bean="instanceFactory" factory-method="getNews">
+        <constructor-arg value="news1"/>
+    </bean>
+    <bean id="news22" factory-bean="instanceFactory" factory-method="getNews">
+        <constructor-arg value="news2"/>
+    </bean>
+</beans>
