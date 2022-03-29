@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="42f21023-e034-4b1a-ad7e-f60b546eec11" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\software\mavenrespority" />
+        <option name="mavenHome" value="F:/software/Maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="F:\software\Maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="26CG6MuHxarc0V2HEmKM3mCIwCg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yuan.test3" />
+      <recent name="com.mayuan.demo4" />
+      <recent name="com.mayuan.demo2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JavaWorkSpace2\SpringC\src\main\resources" />
+      <recent name="E:\JavaWorkSpace2\SpringC\src\main\java\com\mayuan\demo4" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestAccount4.test1">
+    <configuration name="TestAccount2.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.yuan.test3.TestAccount2" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAccount3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.yuan.test3.TestAccount3" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAccount3.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.yuan.test3.TestAccount3" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAccount4.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.yuan.test3.TestAccount4" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAccount.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.yuan.test3.TestAccount" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestAccount4.test1" />
+        <item itemvalue="JUnit.TestAccount3.test1" />
+        <item itemvalue="JUnit.TestAccount2.test1" />
+        <item itemvalue="JUnit.TestAccount.test1" />
+        <item itemvalue="JUnit.TestAccount3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42f21023-e034-4b1a-ad7e-f60b546eec11" name="Default Changelist" comment="" />
+      <created>1646919982158</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646919982158</updated>
+      <workItem from="1646919992344" duration="4332000" />
+      <workItem from="1647049888107" duration="2936000" />
+      <workItem from="1647053274691" duration="2832000" />
+      <workItem from="1647056169145" duration="1496000" />
+      <workItem from="1647077680659" duration="11000" />
+      <workItem from="1647077713162" duration="848000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1647055577588">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1647055577588" />
+    <state width="1493" height="190" key="GridCell.Tab.0.bottom" timestamp="1647078567775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1647078567775" />
+    <state width="1493" height="190" key="GridCell.Tab.0.center" timestamp="1647078567775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="190" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1647078567775" />
+    <state width="1493" height="190" key="GridCell.Tab.0.left" timestamp="1647078567775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="190" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1647078567775" />
+    <state width="1493" height="190" key="GridCell.Tab.0.right" timestamp="1647078567775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1647078567775" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1646921202744">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1646921202744" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1647077715370">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1647077715370" />
+    <state x="449" y="95" key="spring file set editor" timestamp="1647055494011">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="95" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1647055494011" />
+  </component>
+</project>
