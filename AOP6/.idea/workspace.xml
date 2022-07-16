@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b13f7cc-8cf9-4fa7-91f2-dc7d8d8b2c25" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\software\mavenrespority" />
+        <option name="mavenHome" value="F:/software/Maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="F:\software\Maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="27sf1meJMUPxzxzK4x1oSzL4UzP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/mayuan/dao" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JavaWorkSpace2\AOP6\src\main\java\com\mayuan\dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AopAnnotationTest2.fullAnnotation">
+    <configuration name="AopAnnotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AOP6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mayuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mayuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.mayuan.test3.AopAnnotationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AopAnnotationTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AOP6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mayuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mayuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.mayuan.test3.AopAnnotationTest2" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AopAnnotationTest2.fullAnnotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AOP6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mayuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mayuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.mayuan.test3.AopAnnotationTest2" />
+      <option name="METHOD_NAME" value="fullAnnotation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AopAnnotationTest.testAnnotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AOP6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mayuan.test3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mayuan.test3" />
+      <option name="MAIN_CLASS_NAME" value="com.mayuan.test3.AopAnnotationTest" />
+      <option name="METHOD_NAME" value="testAnnotation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AopAnnotationTest2.fullAnnotation" />
+        <item itemvalue="JUnit.AopAnnotationTest2" />
+        <item itemvalue="JUnit.AopAnnotationTest" />
+        <item itemvalue="JUnit.AopAnnotationTest.testAnnotation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b13f7cc-8cf9-4fa7-91f2-dc7d8d8b2c25" name="Default Changelist" comment="" />
+      <created>1650113501690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650113501690</updated>
+      <workItem from="1650113503019" duration="544000" />
+      <workItem from="1650114244193" duration="1841000" />
+      <workItem from="1650116812532" duration="908000" />
+      <workItem from="1650117948584" duration="194000" />
+      <workItem from="1650119458477" duration="6000" />
+      <workItem from="1650159165570" duration="43000" />
+      <workItem from="1650549859457" duration="221000" />
+      <workItem from="1650551319784" duration="10000" />
+      <workItem from="1653120556963" duration="723000" />
+      <workItem from="1653122531377" duration="50000" />
+      <workItem from="1653123137808" duration="20000" />
+      <workItem from="1653123955382" duration="143000" />
+      <workItem from="1657443702178" duration="163000" />
+      <workItem from="1657966837298" duration="11000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1650116874581">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1650116874581" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1650116501961">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1650116501961" />
+    <state width="1493" height="97" key="GridCell.Tab.0.bottom" timestamp="1653124099217">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="97" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1653124099217" />
+    <state width="1493" height="97" key="GridCell.Tab.0.center" timestamp="1653124099217">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="97" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1653124099217" />
+    <state width="1493" height="97" key="GridCell.Tab.0.left" timestamp="1653124099217">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="97" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1653124099217" />
+    <state width="1493" height="97" key="GridCell.Tab.0.right" timestamp="1653124099217">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="97" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1653124099217" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1650159175285">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1650159175285" />
+  </component>
+</project>
