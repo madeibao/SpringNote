@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>水果库存管理系统</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/fruit.css}"/>
+  <script type="text/javascript" th:src="@{/js/jquery-1.7.2.min.js}"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+<div id="div0">
+  <table class="table table-bordered">
+    <caption>水果库存页面</caption>
+    <tr>
+      <th class="w20">序号</th>
+      <th class="w25">名称</th>
+      <th class="w15">单价</th>
+      <th class="w20">库存</th>
+      <th>操作</th>
+    </tr>
+    <tr th:each="fruit:${fruits}">
+      <td th:text="${fruitStat.count+((page.getCurrent())-1)*page.getSize()}">1</td>
+      <td><a th:text="${fruit.name}" th:href="@{/edit(id=${fruit.id})}">苹果</a></td>
+      <td th:text="${fruit.price}">4</td>
+      <td th:text="${fruit.count}">100</td>
+      <td><img name="delImg" src="imgs/del.png" class="delImg" th:onclick="'delFruit('+${fruit.id}+')'"/></td>
+    </tr>
+    <tr>
+      <td colspan="6">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#"
+                                     th:text="|共${page.getPages()}页|">共5页</a>
+            </li>
+            <li class="page-item"><a class="page-link" th:href="@{/index(cunPage=1)}">首页</a></li>
+            <li class="page-item">
+              <a class="page-link" th:if="${page.getCurrent()<=1}" href="#">上一页</a>
+              <a class="page-link" th:unless="${page.getCurrent()<=1}"
+                 th:href="@{/index(cunPage=${page.getCurrent() - 1})}">上一页</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#" th:text="|第${page.getCurrent()}页|">第1页</a></li>
+            <li class="page-item">
+              <a class="page-link" th:if="${page.getCurrent()>=page.getPages()}" href="#">上一页</a>
+              <a class="page-link" th:unless="${page.getCurrent()>=page.getPages()}"
+                 th:href="@{/index(cunPage=${page.getCurrent() + 1})}">下一页</a>
+            </li>
+            <li class="page-item"><a class="page-link" th:href="@{/index(cunPage=${page.getPages()})}">尾页</a></li>
+          </ul>
+        </nav>
+      </td>
+    </tr>
+  </table>
+
+  <table class="table table-bordered">
+    <caption>添加新库存</caption>
+    <tr>
+      <th>名称：</th>
+      <td><input type="text" id="fname" name="name"/></td>
+    </tr>
+    <tr>
+      <th>单价：</th>
+      <td><input type="text" id="fprice" name="price"/></td>
+    </tr>
+    <tr>
+      <th>库存：</th>
+      <td><input type="text" id="fcount" name="count"/></td>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <input type="submit" value="添加" id="addBtn" onclick="addFruit()"/>
+        <input type="reset" value="重填"/>
+      </th>
+    </tr>
+  </table>
+</div>
+<script type="text/javascript">
+    function addFruit() {
+        let name = $.trim($("#fname").val());
+        let price = $.trim($("#fprice").val());
+        let count = $.trim($("#fcount").val());
+        $.post("http://localhost:8080/fruit/add",
+            {name: name, price: price, count: count},
+            function (data) {
+                if (data.code == 1) {
+                    alert(data.message);
+                    window.location.href = "http://localhost:8080/fruit/index";
+                }
+                if (data.code == 0) {
+                    alert(data.message);
+                }
+            });
+    }
+
+    function delFruit(id) {
+        if (window.confirm("是否确认删除" + id + "?")) {
+            $.post("http://localhost:8080/fruit/delete?id=" + id, {id: id},
+                function (data) {
+                    if (data.code == 1) {
+                        alert(data.message);
+                        window.location.href = "http://localhost:8080/fruit/index";
+                    }
+                    if (data.code == 0) {
+                        alert(data.message);
+                    }
+                });
+        }
+    }
+</script>
+
+</body>
+</html>

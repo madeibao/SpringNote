@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--汽车的bean-->
+    <bean id="car" class="com.mayuan.www.Car">
+        <property name="color" value="黑色"></property>
+        <property name="type" value="奥迪"></property>
+    </bean>
+
+    <!--装配student-->
+    <bean id="student" class="com.mayuan.www.Student" autowire="byType">
+        <property name="name" value="马云"></property>
+        <property name="age" value="18"></property>
+    </bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    <!--实验15：通过注解分别创建Dao,Service,Controller-->
+    <!--通过给bean上添加某些注解，可以快速的将bean添加到IOC容器中.
+        某个类上添加任何一个注解都能快速的将这个组件添加到ioc容器中：
+        Spring有四个注解：
+            @Controller:控制器，我们推荐给控制器层（servlet）的组件加这个注解。
+            @Service:业务逻辑层，（service）。
+            @Repository:数据库层，(持久化层，dao层)。
+            @Component:组件层，不属于以上继承的组件（例：工具类）。
+        使用注解将组件快速的加入到容器中需要几步：
+            1.给要添加的组件标上四个注解的任何一个。
+            2.告诉spring，自动扫描加了注解的组件，依赖context名称空间。
+            3.导入AOP包。
+
+            注意：使用注解加入到容器中的组件和使用配置加入到容器中的组价行为都是默认一致的。
+                1.组件的id,默认就是组件的类名首字母小写。
+                2.组件的作用域，默认就是单例的。
+
+    -->
+
+    <!--
+        component-scan：自动扫描组件。
+        base-package：指定扫描的基础包，把基础包及他下面的所有包的所有加了注解的类，自动的扫描进IOC容器。
+    -->
+    <context:component-scan base-package="com.mayuan.www"></context:component-scan>
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+        <!--自动扫描的包-->
+        <context:component-scan base-package="com.wqh.aop"/>
+        <!--启动AspectJ自动代理-->
+        <aop:aspectj-autoproxy/>
+        <!--配置bean-->
+        <bean id="userService" class="com.wqh.service.Impl.USerServiceImpl"/>
+
+        <!--配置切面-->
+        <bean id="logInterceptor" class="com.wqh.aop.LogInterceptor"/>
+
+        <!--aop配置-->
+        <aop:config>
+            <!--配置切点表达式-->
+            <aop:pointcut id="pointcut" expression=" execution(* com.wqh.service.UserService.*(..))"/>
+            <!--配置切面及通知-->
+            <aop:aspect ref="logInterceptor" order="1">
+                <aop:before method="beforeExecute" pointcut-ref="pointcut"/>
+                <aop:after method="afterExecute" pointcut-ref="pointcut"/>
+                <aop:after-throwing  method="afterThrowing" pointcut-ref="pointcut" throwing="ex"/>
+                <aop:after-returning method="afterReturning" pointcut-ref="pointcut" returning="object"/>
+                <aop:around method="around" pointcut-ref="pointcut"/>
+            </aop:aspect>
+        </aop:config>
+</beans>

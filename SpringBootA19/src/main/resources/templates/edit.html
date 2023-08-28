@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>水果库存管理系统</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/edit.css}"/>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+<div id="div0">
+  <form action="/fruit/update" method="post" th:object="${fruit}" class="form-horizontal">
+    <input type="hidden" name="fid" th:value="*{id}"/>
+    <table class="table table-bordered">
+      <caption class="fruit_title">水果库存编辑页面</caption>
+      <tr>
+        <th class="w20">名称:</th>
+        <td><input type="text" name="fname" th:value="*{name}" readonly/></td>
+      </tr>
+      <tr>
+        <th class="w25">单价:</th>
+        <td><input type="text" name="fprice" th:value="*{price}"/></td>
+      </tr>
+      <tr>
+        <th class="w15">数量:</th>
+        <td><input type="text" name="fcount" th:value="*{count}"/></td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <input type="submit" value="修改"/>
+          <input type="reset" value="重置"/>
+        </th>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

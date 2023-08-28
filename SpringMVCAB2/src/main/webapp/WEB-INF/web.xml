@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <!--SpringMVC创建容器对象时，读取配置文件的默认位置是/WEB-INF/下的，我们可以修改读取位置-->
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--表示Tomcat启动时创建对象的顺序，值越小，就越快创建-->
+        <!--修改默认地读取文件的位置-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:SpringMVC-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <!--使用框架的时候，url-pattern有两种配置方法
+       1.*.do  *.action
+       2.使用斜杠/-->
+       <url-pattern>*.do</url-pattern>
+   </servlet-mapping>
+
+</web-app>

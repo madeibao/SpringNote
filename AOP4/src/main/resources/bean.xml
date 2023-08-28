@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--配置目标类-->
+    <bean id="useDao" class="com.psjj.xml.target.UserDaoImpl"></bean>
+    <!--配置增强类-->
+    <bean id="myAdvice" class="com.psjj.advice.MyAdvice"></bean>
+    <!--配置aop配置，分为两步，先配置切入点，后配置切面-->
+    <aop:config>
+        <!--配置切入点
+        id:切入点唯一标识
+        expression切入点断言表达式
+         格式： [方法的访问权限（一般可以省略）] [返回值类型] [类全限定名称.方法名(每个参数的类型)]
+                        案例1：* com.psjj.xml.target.UserDaoImpl.add()
+                            任意返回值，指定包指定方法
+                        案例2：* com.psjj..UserDaoImpl.add()
+                            任意返回值com.psjj.下任意包下的UserDaoImpl.add()
+                        案例3：* com.psjj..*Impl.add()
+                            任意返回值com.psjj下的任意包下的以impl结尾的类的add方法
+                        案例4：* com.psjj..*Impl.add(..)
+                            任意返回值 com.psjj下任意包下的以impl结尾的类的add方法且方法参数任意
+                        案例5：* com.psjj..*Impl.*(..)
+                           任意返回值 com.psjj下任意包下的以impl结尾的类的任意方法且方法参数任意-->
+        <aop:pointcut id="addpointcut" expression="execution(* com.psjj..*Impl.add(..))"/>
+        <aop:pointcut id="delpointcut" expression="execution(* com.psjj..*Impl.del(..))"/>
+        <aop:pointcut id="updatepointcut" expression="execution(* com.psjj..*Impl.update(..))"/>
+        <aop:pointcut id="querypointcut" expression="execution(* com.psjj..*Impl.query(..))"/>
+        <!--  所有的方法都会返回的调用-->
+        <aop:pointcut id="allpointcut" expression="execution(* com.psjj..*Impl.*(..))"/>
+
+
+        <!--配置切面-->
+        <aop:aspect id="myAdvice" ref="myAdvice">
+            <!--配置前置通知-->
+            <aop:before method="before" pointcut-ref="addpointcut"/>
+
+            <!--配置后置通知-->
+            <aop:after method="after" pointcut-ref="updatepointcut"/>
+            <!--配置环绕通知-->
+            <aop:around method="around" pointcut-ref="delpointcut" arg-names="joinPoint"/>
+            <!--配置异常通知-->
+            <aop:after-throwing method="exception" pointcut-ref="querypointcut" throwing="e"/>
+            <!--配置最终通知-->
+            <aop:after-returning method="returnExecute" pointcut-ref="allpointcut" returning="result"/>
+        </aop:aspect>
+
+    </aop:config>
+</beans>
