@@ -44,3 +44,19 @@ spring.redis.pool.max-idle=8
 spring.redis.pool.min-idle=0
 # 连接超时时间 单位 ms（毫秒）
 spring.redis.timeout=30000
+
+
+
+常用maven 依赖
+-----------------------------------------------------------------------------------------------------------------------------
+
+        <!-- 数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+
+
+
+

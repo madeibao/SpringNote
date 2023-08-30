@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置文件的抽取-->
+    <properties resource="db.properties"/>
+
+    <!--    开启二级缓存   步骤1-->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+
+        <!-- 全局启用延迟加载特性    默认是false不开启懒加载-->
+        <!--        <setting name="lazyLoadingEnabled" value="true"/>-->
+        <!-- false: 有延迟加载属性的对象在被调用时将会完全加载任意属性    true(默认): 加载对象，则加载所有属性， -->
+        <!--        <setting name="aggressiveLazyLoading" value="false"/>-->
+    </settings>
+
+    <typeAliases>
+        <!-- 给单个类配置别名-->
+        <!--从该包下面找别名类型-->
+        <package name="cn.chenjiajin.mybatisdemo.domain"/>
+    </typeAliases>
+
+    <!--    配置连接数据库的环境-->
+    <environments default="dev">
+        <!-- 开发环境-->
+
+        <environment id="dev">
+            <!-- transactionManager:事务管理器-->
+            <!-- 类型：使用JDBC类型，拥有提交和回滚功能-->
+            <transactionManager type="JDBC"/>
+
+            <!-- MyBatis 内置的连接池-->
+            <dataSource type="POOLED">
+                <!-- 配置数据源，四要素
+           类型：选择数据源的类型,POOLED：用户池的概念（连接池）    -->
+                <!-- <property name="driver" value="com.mysql.jdbc.Driver"/>
+                     <property name="url" value="jdbc:mysql:///javaweb"/>
+                     <property name="username" value="root"/>
+                     <property name="password" value="admin"/>           -->
+
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+
+            </dataSource>
+
+        </environment>
+    </environments>
+    <mappers>
+        <!-- 引入mapper.xml文件 ,间隔用/  -->
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/OrderMapper.xml"/>
+        <!--        <package name="cn.chenjiajin.mapper"/>-->
+    </mappers>
+</configuration>
+
+
+
+
+
+
+
+

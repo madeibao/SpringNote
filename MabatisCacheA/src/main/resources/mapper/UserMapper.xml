@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.chenjiajin.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="cn.chenjiajin.domain.User">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+    </resultMap>
+
+    <delete id="delete">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into user (name)
+        values (#{name})
+    </insert>
+
+    <insert id="insertNotCache" useGeneratedKeys="true" keyProperty="id" flushCache="false">
+        insert into user (name)
+        values (#{name})
+    </insert>
+
+    <update id="update">
+        update user
+        set name = #{name}
+        where id = #{id}
+    </update>
+    <select id="select" resultMap="BaseResultMap">
+        select id, name
+        from user
+        where id = #{id}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, name, age
+        from user
+    </select>
+
+    <select id="selectForList" resultType="cn.chenjiajin.domain.User">
+        select *
+        from user
+        limit #{start},#{pageSize}
+    </select>
+    <select id="selectForCount" resultType="java.lang.Integer">
+        select count(*)
+        from user
+    </select>
+
+
+    <!--    开启二级缓存   步骤2:  空标签申明 即可开启 , 之后根据namespace="cn.chenjiajin.mapper.UserMapper" 也就是UserMapper的都开启二级缓存了-->
+    <cache/>
+    <!--    <cache type="org.apache.ibatis.cache.impl.PerpetualCache"/>-->
+
+    <select id="findById" resultType="cn.chenjiajin.domain.User">
+        select *
+        from user
+        where id = #{id}
+    </select>
+
+    <select id="findByIdNotCache" resultType="cn.chenjiajin.domain.User" useCache="false">
+        <!-- useCache:  -->
+        <!--   true (默认): 表示使用二级缓存-->
+        <!--   false: 禁止 namespace="cn.chenjiajin.mapper.UserMapper"下 id为 findByIdNotCache 使用二级缓存 , 每次查询将直接执行SQL从数据查找-->
+        select *
+        from user
+        where id = #{id}
+    </select>
+
+    <!--    设置updateUsername执行后不刷新缓存flushCache="false"        -->
+    <!--    flushCache:刷新缓存策略，有DEFAULT,TRUE,FALSE三种值， 默认DEFAULT或TRUE表示刷新缓存  , FALSE表示不刷新查询语句的缓存 -->
+    <update id="updateName">
+        update user
+        set name = #{name}
+        where id = #{id}
+    </update>
+
+    <update id="updateNameNotFlush" flushCache="false">
+        update user
+        set name = #{name}
+        where id = #{id}
+    </update>
+
+
+    <resultMap id="OrderResultMap" type="cn.chenjiajin.domain.Order">
+        <id column="id" property="id"/>
+        <result column="ordertime" property="orderTime"/>
+        <result column="total" property="total"/>
+        <association property="user"
+                     javaType="cn.chenjiajin.domain.User"
+                     select="cn.chenjiajin.mapper.UserMapper.findById"
+                     column="uid">                    <!--     fetchType="lazy"            -->
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="age" property="age"/>
+        </association>
+    </resultMap>
+
+
+
+    <select id="getOrderAndUserByOrderId" resultMap="OrderResultMap">
+        SELECT *
+        FROM orders o,
+             USER u
+        WHERE o.uid = u.id
+          and o.id = #{orderId}
+    </select>
+
+    <resultMap id="UserResultMap" type="cn.chenjiajin.domain.UserLazy">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <collection property="orderList"
+                    javaType="List"
+                    select="cn.chenjiajin.mapper.OrderMapper.getByUserId"
+                    column="id"
+                    fetchType="lazy">      <!--   单个方法启用延迟加载特性   eager: 直接加载，默认值。  lazy: 深度延迟     -->
+            <id column="id" property="id"/>
+            <result column="ordertime" property="orderTime"/>
+            <result column="total" property="total"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getUserAndOrderListByUserId" resultMap="UserResultMap">
+        SELECT id, name, age
+        FROM user
+        WHERE id = #{userId}
+    </select>
+
+
+</mapper>
