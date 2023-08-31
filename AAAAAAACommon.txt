@@ -1,6 +1,10 @@
 
 MySQL时区 Asia/Shanghai
 
+创建SrpingBoot的时候使用阿里云的镜像：
+https://start.aliyun.com
+
+
 
 <environments default="development">
     <environment id="development">
