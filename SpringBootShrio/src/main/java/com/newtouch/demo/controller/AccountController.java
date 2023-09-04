@@ -44,6 +44,7 @@ public class AccountController {
             return "login";
         }
     }
+
     @GetMapping("/unauth")
     @ResponseBody
     public String unauth(){

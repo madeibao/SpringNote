@@ -22,8 +22,6 @@ public class Fruit implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-
-    
     private String name;
 
     private Integer price;

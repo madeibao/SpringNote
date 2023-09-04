@@ -13,6 +13,7 @@ class DemoApplicationTests {
     private AccountMapper mapper;
     @Autowired
     private AccountService accountService;
+
     @Test
     void contextLoads() {
         mapper.selectList(null).forEach(System.out::println);

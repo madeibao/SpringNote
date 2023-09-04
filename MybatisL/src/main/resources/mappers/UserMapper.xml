@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.mayuan.mybatis.dao.StudentDao">
+    <!-- 更新学生信息 -->
+    <update id="updateStudent">
+        update student set name=#{name},email=#{email} where id=#{id}
+    </update>
+
+
+    <!-- ${}占位符的使用 -->
+    <select id="queryStudent" resultType="com.mayuan.mybatis.entity.Student">
+        select * from student where name=${studentName}
+    </select>
+
+
+    <!-- 按照某个列排序 -->
+    <select id="queryStudentOrderByColName" resultType="com.mayuan.mybatis.entity.Student">
+        select * from ${tableName} where name=#{myName} order by ${colName} desc
+    </select>
+
+
+    <!--
+        resultType: 1.java类型全限定名称  2.别名
+        resultType: 表示mybatis执行sql语句后得到java对象类型
+    -->
+    <select id="selectById" resultType="com.mayuan.mybatis.entity.Student">
+        select id,name,email,age from student where id=#{studentId}
+    </select>
+
+
+    <!--
+    执行sql语句，得到一个值（一行一列）
+    -->
+    <select id="countStudent" resultType="java.lang.Long">
+        select count(*) from student
+    </select>
+
+
+    <!--
+    执行sql语句，得到一个Map结构的数据
+    sql语句执行结果中，列名为map的key，列值为map的value
+    sql语句执行得到的是一行记录，此时转为map结构是正确的
+    (如果得到的是一个map结构的数据，则sql语句最多能获取一行记录，超过一行就会报错)
+-->
+    <select id="selectMap" resultType="java.util.Map">
+        select  id, name from student where id!=#{stuid}
+    </select>
+
+
+</mapper>

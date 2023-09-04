@@ -63,4 +63,8 @@ spring.redis.timeout=30000
 
 
 
+.gitignore 在线生成问题：
+
+https://gitignore.itranswarp.com/
+
 
