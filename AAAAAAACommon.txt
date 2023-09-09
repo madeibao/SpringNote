@@ -14,6 +14,25 @@ https://start.aliyun.com
             <version>1.2.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <!--            < 依赖的范围 –>-->
+            <scope>test</scope>
+        </dependency>
 
 
 .gitignore 在线生成问题：
@@ -21,3 +40,6 @@ https://start.aliyun.com
 https://gitignore.itranswarp.com/
 
 
+
+当需要输入参数时：
+http://localhost:8080/user/login?name=马远&password=1233

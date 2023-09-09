@@ -27,7 +27,7 @@ public class UserController {
 
     @GetMapping("/user")
     public String hehe(Model model) {
-        model.addAttribute("user", new User(UUID.randomUUID().toString(), "yizhiwazi", "20170928"));
+        model.addAttribute("user", new User(UUID.randomUUID().toString(), "nijitaimei", "2019998"));
         return "user";
     }
 
