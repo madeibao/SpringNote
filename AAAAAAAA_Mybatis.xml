@@ -97,3 +97,27 @@ SpringBoot 一般依赖：
             <artifactId>velocity-engine-core</artifactId>
             <version>2.0</version>
         </dependency>
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+<!-- mybatis-plus 的另一个依赖版本 -->
+        <!--mybatis-plus启动依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <!--mybatis-plus自动生成器依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <!--        模板引擎依赖-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
