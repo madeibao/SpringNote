@@ -76,8 +76,7 @@ public class DBDriver {
             UserInfoMapper mapper=   session.getMapper(UserInfoMapper.class);
 
             List<UserInfo> userinfoes= mapper.selectUserByParams2("张","青");
-            for (UserInfo user:userinfoes
-            ) {
+            for (UserInfo user:userinfoes) {
                 System.out.println(user);
             }
 

@@ -49,8 +49,8 @@ public class TestA {
     public void aa() {
         StudentMapper sdao = this.session.getMapper(StudentMapper.class);
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("name", "张飞");
-        map.put("age", 199);
+        map.put("name", "诸葛亮");
+        map.put("age", 23);
         map.clear();
         List<StudentA> list = sdao.query(map);
         for (StudentA s : list) {
@@ -64,7 +64,7 @@ public class TestA {
         StudentMapper sdao = this.session.getMapper(StudentMapper.class);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("name", "张三");
-        map.put("age", 90);
+        map.put("age", 99);
         map.put("id", 1);
 
         sdao.update(map);
