@@ -20,19 +20,28 @@ import java.util.Map;
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements IUserService {
+
     UserMapper userMapper;
     @Override
     public List<User> pagerFind(Map map) {
         return userMapper.pagerFind(map);
     }
+
     @Override
     public void insert(User user){
         userMapper.insert(user);
         System.out.println("添加成功");
     }
+
     @Override
     public void delete(int id){
         userMapper.delete(id);
         System.out.println("删除成功");
+    }
+
+    @Override
+    public void update(String user){
+        userMapper.updateName(user);
+        System.out.println("更新成功");
     }
 }

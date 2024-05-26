@@ -14,16 +14,16 @@ import java.util.List;
 
 public interface AccountRepository {
 
-    public int save(Account account);
+    int save(Account account);
 
-    public int update(Account account);
+    int update(Account account);
 
-    public int deleteById(long id);
+    int deleteById(long id);
 
-    public List<Account> findAll();
+    List<Account> findAll();
 
-    public Account findById(long id);
+    Account findById(long id);
 
-    public Account findByName(String name);
+    Account findByName(String name);
 
 }

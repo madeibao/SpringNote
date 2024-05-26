@@ -17,4 +17,5 @@ public interface IUserService {
     List<User> pagerFind(Map map);
     void insert(User user);
     void delete(int id);
+    void update(String loginName);
 }

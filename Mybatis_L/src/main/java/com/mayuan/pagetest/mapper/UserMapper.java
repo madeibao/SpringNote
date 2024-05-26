@@ -19,4 +19,5 @@ public interface UserMapper {
     List<User> pagerFind(Map map);
     void insert(User user);
     void delete(int id);
+    void updateName(String loginName);
 }

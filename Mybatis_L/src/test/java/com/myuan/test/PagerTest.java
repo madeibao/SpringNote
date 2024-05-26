@@ -25,6 +25,7 @@ import java.util.Map;
 public class PagerTest {
 
     IUserService userService;
+
     @Before
     public void init() {
         ApplicationContext applicationContext=new AnnotationConfigApplicationContext(SpringConfig.class);
@@ -54,8 +55,14 @@ public class PagerTest {
         user.setTest_name("杨红玉");
         userService.insert(user);
     }
+    
     @Test
-    public void delete(){
+    public void delete() {
         userService.delete(4);
+    }
+
+    @Test
+    public void update(){
+        userService.update("李艳");
     }
 }

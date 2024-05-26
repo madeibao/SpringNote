@@ -23,4 +23,10 @@
     <delete id="delete" parameterType="int" >
         delete from test where id = #{id}
     </delete>
+
+    <update id="updateName" parameterType="java.lang.String">
+        update test
+        set test_name = CONCAT(test_name,'`delete')
+        where test_name = #{loginName}
+    </update>
 </mapper>

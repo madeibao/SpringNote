@@ -27,7 +27,6 @@ public class Test {
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-
         String statement = "com.southwind.mapper.AccountMapper.save";
         Account account = new Account(1L,"小马","111",22);
         Account account2 = new Account(2L,"小鲁","222",23);
