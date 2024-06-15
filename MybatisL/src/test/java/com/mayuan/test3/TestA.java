@@ -89,7 +89,6 @@ public class TestA {
         session.close();
     }
 
-
     @Test
     public void testCountStudent() {
         SqlSession session = MyBatisUtil.createSqlsession();
@@ -103,14 +102,10 @@ public class TestA {
     public void testSelectMap() {
         SqlSession session = MyBatisUtil.createSqlsession();
         StudentDao studentDao=session.getMapper(StudentDao.class);
-        Map<Object,Object> map=studentDao.selectMap(2);
-        System.out.println("map === " + map);
-        System.out.println("name === " + map.get("name"));
-        System.out.println("id === " + map.get("id"));
+        List<Map<Object,Object>> resList =studentDao.selectMap(1);
+        resList.forEach(System.out::println);
         session.close();
     }
-
-
 }
 
 // 参考

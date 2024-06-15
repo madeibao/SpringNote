@@ -44,9 +44,7 @@ public class MyController {
         mv.addObject("mv02","执行的是doSome方法！");
         mv.setViewName("show");
         return mv;
-
     }
-
 
     //指定other.do是post请求方式
     @RequestMapping(value = "/other.do",method = RequestMethod.POST)
@@ -57,7 +55,6 @@ public class MyController {
         modelAndView.setViewName("show");
         return modelAndView;
     }
-
 
     //不指定请求方式，没有限制
     @RequestMapping(value = "/first.do")

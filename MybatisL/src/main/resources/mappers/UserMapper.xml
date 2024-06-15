@@ -47,7 +47,7 @@
     (如果得到的是一个map结构的数据，则sql语句最多能获取一行记录，超过一行就会报错)
 -->
     <select id="selectMap" resultType="java.util.Map">
-        select  id, name from student where id!=#{stuid}
+        select id, name, email, age from student where id!= #{stuid}
     </select>
 
 

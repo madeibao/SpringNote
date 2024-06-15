@@ -50,8 +50,8 @@ public class PagerTest {
     @Test
     public void insert() {
         User user=new User();
-        user.setAge(24);
-        user.setUser_addr("天津");
+        user.setAge(25);
+        user.setUser_addr("南京");
         user.setTest_name("杨红玉");
         userService.insert(user);
     }

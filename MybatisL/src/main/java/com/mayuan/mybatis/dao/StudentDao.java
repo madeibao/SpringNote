@@ -42,6 +42,6 @@ public interface StudentDao {
 
 
     /**Map 类型映射*/
-    Map<Object,Object> selectMap(@Param("stuid") Integer id);
+    List<Map<Object,Object>> selectMap(@Param("stuid") Integer id);
 
 }

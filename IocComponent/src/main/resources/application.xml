@@ -30,5 +30,6 @@
         component-scan：自动扫描组件。
         base-package：指定扫描的基础包，把基础包及他下面的所有包的所有加了注解的类，自动的扫描进IOC容器。
     -->
+
     <context:component-scan base-package="com.mayuan.www"></context:component-scan>
 </beans>
