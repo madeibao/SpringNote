@@ -49,9 +49,9 @@ public class TestA {
         for(Student stu : students) {
             System.out.println("stu === " + stu);
         }
+
         session.close();
     }
-
 
     /** 按照某一列来进行查询*/
     /**
