@@ -7,6 +7,7 @@ package org.fluxtest.example;
  * @Description TODO
  * @Version 1.0
  **/
+
 import reactor.core.publisher.Mono;
 
 public class MonoExample {

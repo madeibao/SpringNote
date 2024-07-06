@@ -17,9 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class MyBatisUtil {
-
     static SqlSessionFactory factory = null;
-
     static {//该代码只需要执行一次，不需要重复获取连接池对象，
         try {
             InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
@@ -28,8 +26,6 @@ public class MyBatisUtil {
             e.printStackTrace();
         }
     }
-
-
     public static SqlSession openSession() {
         return factory.openSession(); //只需要返回连接对象就行，不用返回连接池对象
     }

@@ -29,14 +29,13 @@ public class TestA {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         //模拟条件User
-        User condition =new User();
+        User condition = new User();
         condition.setId(1);
         condition.setUsername("zs");
         condition.setPassword("123");
         List<User> userList = mapper.findByCondition(condition);
         System.out.println(userList);
     }
-
 
     @Test
     public void test2() throws IOException {
