@@ -60,27 +60,35 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Mockito 核心包 -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.7.2</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.11.0</version>
             <scope>test</scope>
         </dependency>
 
-        <!--        <dependencies>-->
-        <!--            <dependency>-->
-        <!--                <groupId>io.projectreactor</groupId>-->
-        <!--                <artifactId>reactor-core</artifactId>-->
-        <!--                <version>3.4.0</version>-->
-        <!--            </dependency>-->
-        <!--            <dependency>-->
-        <!--                <groupId>io.projectreactor</groupId>-->
-        <!--                <artifactId>reactor-test</artifactId>-->
-        <!--                <version>3.4.0</version>-->
-        <!--                <scope>test</scope>-->
-        <!--            </dependency>-->
-        <!--        </dependencies>-->
-
+        <!-- Mockito 扩展包，当需要 mock 静态方法的时候需要用此包 -->
+        <!-- 在 Mockito 5.2.0 之后的版本里，inline 已经融合进了 core 里，但是 4.x 里还是需要单独引用 -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>4.11.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Mockito 4.x + JUnit 5.x 的整合包 -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.11.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

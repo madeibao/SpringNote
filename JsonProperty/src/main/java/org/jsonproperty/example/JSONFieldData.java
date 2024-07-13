@@ -11,10 +11,10 @@ package org.jsonproperty.example;
 import com.alibaba.fastjson.annotation.JSONField;
 
 public class JSONFieldData {
-    @JSONField(name = "my_name")
+    @JSONField(name = "myName")
     private String name;
     private String phone;
-    @JSONField(name = "my_age")
+    @JSONField(name = "myAge")
     private Integer age;
 
     public JSONFieldData() {
@@ -25,7 +25,6 @@ public class JSONFieldData {
         this.phone = phone;
         this.age = age;
     }
-
 
     public void setAge(Integer age) {
         this.age = age;

@@ -12,7 +12,7 @@
     </bean>
     <bean id="students" class="com.mayuan.Students">
         <property name="name">
-            <value type="java.lang.String">yiwen</value>
+            <value type="java.lang.String">yuwen</value>
         </property>
     </bean>
     <bean id="teachers" class="com.mayuan.Teachers">
