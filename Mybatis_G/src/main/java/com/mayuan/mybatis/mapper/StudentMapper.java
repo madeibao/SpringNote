@@ -16,13 +16,22 @@ import java.util.Map;
 
 public interface StudentMapper {
     public List<StudentA> query();
+
     /**
-     * 添加使用map进行传递参数**/
-    public List<StudentA> query(Map<String,Object> map );
-    /**修改*/
-    public int update(Map<String,Object> map);
-    /**查询*/
+     * 添加使用map进行传递参数
+     **/
+    public List<StudentA> query(Map<String, Object> map);
+
+    /**
+     * 修改
+     */
+    public int update(Map<String, Object> map);
+
+    /**
+     * 查询
+     */
     public List<StudentA> queryById();
+
     public List<StudentA> show(@Param("ids") int[] ids);
 
 }
