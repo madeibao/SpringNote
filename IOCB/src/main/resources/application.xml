@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car1" class="com.mayuan.spring.Car">
+        <property name="name" value="baoma"></property>
+    </bean>
+    <bean id="car2" class="com.mayuan.spring.Car">
+        <property name="name" value="benchi"></property>
+    </bean>
+    <bean id="car3" class="com.mayuan.spring.Car">
+        <property name="name" value="binli"></property>
+    </bean>
+
+    <bean id="student" class="com.mayuan.spring.Student">
+        <property name="name" value="tom"></property>
+        <property name="age" value="12"></property>
+        <property name="score" value="98.00"></property>
+        <property name="cars">
+            <!-- 使用List节点为List集合属性赋值
+            <list>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+                <ref bean="car3"/>
+            </list>
+            -->
+            <map>
+                <entry key="A" value-ref="car1"></entry>
+                <entry key="B" value-ref="car2"></entry>
+                <entry key="C" value-ref="car3"></entry>
+            </map>
+        </property>
+
+    </bean>
+
+
+</beans>

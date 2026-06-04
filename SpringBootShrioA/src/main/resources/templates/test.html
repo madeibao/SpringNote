@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试thymeleaf的使用</title>
+</head>
+<body>
+    <h3 th:text="${name}"></h3>
+    </hr>
+    <div shiro:hasPermission="user:add">
+        进入用户的添加功能：<a href="/add">add</a></br>
+    </div>
+    <div shiro:hasPermission="user:update">
+        进入用户的更新功能：<a href="/update">update</a>
+    </div>
+<a href="login">登录</a>
+
+</body>
+</html>

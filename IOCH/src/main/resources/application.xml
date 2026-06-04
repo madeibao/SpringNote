@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="book01" class="com.mayuan.spring.Book" scope="prototype" init-method="myInit" destroy-method="myDeatory">
+
+                <property name="author" value="曹雪芹"></property>
+                <property name="bookName" value="红楼梦"></property>
+        </bean>
+
+</beans>

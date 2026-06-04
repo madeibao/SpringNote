@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--        所有配置内容需要放在configuration标签下-->
+<configuration>
+
+    <!--   开启日志，指定使用LOG4J作为日志的实现-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    <!--别名设置-->
+    <!--    package指定的路径，会自动扫描下面的所有实体类，以类名首字母小写作为假名，代替全限定的书写-->
+    <typeAliases>
+        <package name="com.candy.pojo"/>
+    </typeAliases>
+
+
+    <!--    环境配置，可以配置多个，默认使用一个环境-->
+    <environments default="development">
+        <environment id="development">
+            <!--            transactionManager进行事务管理配置，默认使用JDBC的方式进行事务管理-->
+            <transactionManager type="JDBC"/>
+            <!--        dataSource数据源配置    -->
+            <dataSource type="POOLED">
+                <!--                数据库链接驱动
+                               注意:mysql8与mysql5不同
+                -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <!--
+                数据库的连接串 mysql5和mysql8不同
+                jdbc:mysql  jdbc链接mysql数据库
+                localhost:需要链接的数据库得到ip地址  localhost与127.0.0.1含义相同,指代本机地址
+                3306：mysql数据库的默认端口
+                database_name:需要链接的数据库的库名
+                -->
+                <property name="url" value="jdbc:mysql://localhost:3306/myspace3?useUnicode=true&amp;characterEncoding=UTF-8&amp;userSSL=false&amp;serverTimezone=GMT%2B8"/>
+                <!--                数据库用户名-->
+                <property name="username" value="root"/>
+                <!--                数据库密码-->
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--    映射器配置
+    mappers 元素则包含了一组映射器（mapper），这些映射器的 XML 映射文件包含了 SQL 代码和映射定义信息。
+    -->
+    <mappers>
+        <mapper resource="mapper/UserInfoMapper.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.candy.dao.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.candy.pojo.UserInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="userpwd" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="useraddress" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="usertel" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="isdelete" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, userpwd, useraddress, usertel, isdelete
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from userinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <!--    多参数传递 注解指定参数名字-->
+  <select id="selectUserByParams3"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from userinfo
+    <!--    where 元素只会在子元素返回任何内容的情况下才插入 “WHERE” 子句。
+    而且，若子句的开头为 “AND” 或 “OR”，where 元素也会将它们去除。-->
+    <where>
+      <!--      多参数传递时，需要指定参数的位置，可以用arg0、arg1或param1、param2来进行指定-->
+      <if test="userinfo.username!=null">
+        and username like CONCAT('%',#{userinfo.username,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="userinfo.useraddress!=null">
+        <bind name="useraddress" value="'%' + userinfo.useraddress + '%'" />
+        and useraddress like  #{useraddress,jdbcType=VARCHAR}
+      </if>
+      <if test="isDesc!=null">
+        ORDER BY id DESC
+      </if>
+    </where>
+  </select>
+
+  <!--    多参数传递 注解指定参数名字-->
+  <select id="selectUserByParams2"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from userinfo
+    <!--    where 元素只会在子元素返回任何内容的情况下才插入 “WHERE” 子句。
+    而且，若子句的开头为 “AND” 或 “OR”，where 元素也会将它们去除。-->
+    <where>
+      <!--      多参数传递时，需要指定参数的位置，可以用arg0、arg1或param1、param2来进行指定-->
+      <if test="username!=null">
+        and username like CONCAT('%',#{username,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="useraddress!=null">
+        <bind name="useraddress" value="'%' + useraddress + '%'" />
+        and useraddress like  #{useraddress,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+
+  <!--    模糊查询-->
+  <select id="selectUserInfoByLike" parameterType="userInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from userinfo
+    <!--    where 元素只会在子元素返回任何内容的情况下才插入 “WHERE” 子句。
+    而且，若子句的开头为 “AND” 或 “OR”，where 元素也会将它们去除。-->
+    <where>
+      <!--            实现模糊查询的第一种方式 使用mysql的内置函数CONCAT实现字符串拼接-->
+      <if test="username!=null">
+        and username like CONCAT('%',#{username,jdbcType=VARCHAR},'%')
+      </if>
+      <!--            实现模糊查询的第二种方式 使用bind标签，在 OGNL 表达式以外创建一个变量，并将其绑定到当前的上下文-->
+      <if test="useraddress!=null">
+        <!--              bind标签中name属性时创建的变量的名字，用于绑定在下文中
+                          value属性：创建的变量的值，如果参数类型为实体类类型时，_parameter是固定写法，
+                            getUseraddress()为调用实体类的get方法获取该属性的值
+          -->
+        <bind name="useraddress" value="'%' + _parameter.getUseraddress() + '%'" />
+        and useraddress like #{useraddress,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+
+  <select id="selectUserInfo" parameterType="userInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from userinfo
+    <!--    where 元素只会在子元素返回任何内容的情况下才插入 “WHERE” 子句。
+    而且，若子句的开头为 “AND” 或 “OR”，where 元素也会将它们去除。-->
+    <where>
+      <if test="username!=null">
+        and username=#{username,jdbcType=VARCHAR}
+      </if>
+      <if test="useraddress!=null">
+        and useraddress=#{useraddress,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+
+
+  <select id="selectUserInfo2" parameterType="userInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from userinfo
+    where 1=1
+    <!--    调用时，传递哪个参数，动态拼接哪个，若两个参数都不传，则执行otherwise后面的条件
+    若传入多个参数，则在执行时，从上至下进行查找，找到的第一个参数会进行拼接，其他的条件不拼接-->
+    <choose>
+      <when test="username!=null">
+        and username=#{username,jdbcType=VARCHAR}
+      </when>
+      <when test="useraddress!=null">
+        and useraddress=#{useraddress,jdbcType=VARCHAR}
+      </when>
+      <otherwise>
+        and usertel='13698745698'
+      </otherwise>
+    </choose>
+  </select>
+
+  <!--    foreach 元素的功能非常强大，它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。
+  它也允许你指定开头与结尾的字符串以及集合项迭代之间的分隔符-->
+  <!--    可以将任何可迭代对象（如 List、Set 等）、Map 对象或者数组对象作为集合参数传递给 foreach。
+  当使用可迭代对象或者数组时，index 是当前迭代的序号，
+  item 的值是本次迭代获取到的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值。-->
+  <select id="selectUserInfoByIds" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM userinfo
+    WHERE id in
+    <!--        foreach标签可以对传递进来的集合类型的参数进行遍历-->
+    <!--        index是索引，item是集合中的每个元素单元-->
+    <foreach item="item" index="index" collection="list"
+             open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </select>
+
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from userinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.candy.pojo.UserInfo">
+    insert into userinfo (id, username, userpwd, 
+      useraddress, usertel, isdelete
+      )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, 
+      #{useraddress,jdbcType=VARCHAR}, #{usertel,jdbcType=VARCHAR}, #{isdelete,jdbcType=INTEGER}
+      )
+  </insert>
+
+
+  <insert id="insertSelective" parameterType="com.candy.pojo.UserInfo">
+    insert into userinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="userpwd != null">
+        userpwd,
+      </if>
+      <if test="useraddress != null">
+        useraddress,
+      </if>
+      <if test="usertel != null">
+        usertel,
+      </if>
+      <if test="isdelete != null">
+        isdelete,
+      </if>
+    </trim>
+
+
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null">
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="useraddress != null">
+        #{useraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="usertel != null">
+        #{usertel,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null">
+        #{isdelete,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.candy.pojo.UserInfo">
+    update userinfo
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null">
+        userpwd = #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="useraddress != null">
+        useraddress = #{useraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="usertel != null">
+        usertel = #{usertel,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null">
+        isdelete = #{isdelete,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.candy.pojo.UserInfo">
+    update userinfo
+    set username = #{username,jdbcType=VARCHAR},
+      userpwd = #{userpwd,jdbcType=VARCHAR},
+      useraddress = #{useraddress,jdbcType=VARCHAR},
+      usertel = #{usertel,jdbcType=VARCHAR},
+      isdelete = #{isdelete,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>

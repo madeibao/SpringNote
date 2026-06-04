@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--        aop: 通知的方法调用-->
+        <bean id="userService" class="com.wjb.service.UserServiceImpl"/>
+        <bean id="myAdvice" class="com.wjb.aop.AopAdvice"/>
+        <!--    aop:通知方法的参数获取-->
+        <bean id="bookService" class="com.wjb.service.BookServiceImpl"/>
+        <bean class="com.wjb.service.StudentServiceImpl" id="studentService"/>
+        <aop:config>
+            <aop:pointcut id="pt" expression="execution(* *(..))"/>
+            <aop:aspect ref="myAdvice">
+<!--                <aop:before method="before" pointcut-ref="pt"/>-->
+<!--                <aop:around method="around" pointcut-ref="pt"/>-->
+<!--                获取原始方法的参数-->
+<!--                <aop:after method="afterPro" pointcut="execution(* *(..)) &amp;&amp; args(b,a)"/>-->
+                    <aop:before method="beforePro" pointcut-ref="pt"/>
+                <!--            获取原始方法返回值         -->
+<!--                <aop:after-returning method="afterPro01" pointcut-ref="pt" returning="ret" />-->
+<!--                <aop:around method="aroundPro" pointcut-ref="pt"/>-->
+            </aop:aspect>
+        </aop:config>
+
+
+
+
+</beans>

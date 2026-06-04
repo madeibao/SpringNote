@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.chenjiajin.mapper.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="cn.chenjiajin.domain.Order">
+        <id column="id" property="id"/>
+        <result column="ordertime" property="orderTime"/>
+        <result column="total" property="total"/>
+    </resultMap>
+
+    <select id="getById" resultMap="BaseResultMap">
+        select *
+        from orders
+        where id = #{id}
+    </select>
+
+    <select id="getByUserId" resultType="cn.chenjiajin.domain.Order">
+        select *
+        from orders
+        where uid = #{id}
+    </select>
+
+
+</mapper>

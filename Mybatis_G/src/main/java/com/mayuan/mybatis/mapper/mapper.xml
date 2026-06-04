@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--编写实体的映射文件-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--com.fz.mapper.StudentMapper注意它是路径-->
+<mapper namespace="com.mayuan.mybatis.mapper.StudentMapper">
+    <select id="show" resultType="student" >
+        select * from studenta where id in
+        <foreach collection="ids"  separator="," open="(" close=")" >
+            #{ids}
+        </foreach>
+    </select>
+
+
+    <update id="update" parameterType="Map">
+        update studenta
+        <!-- <set>
+             <if test="name !=null ">name = #{name},</if>
+             <if test="age !=null ">age = #{age},</if>
+         </set>-->
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name !=null "> name = #{name},</if>
+            <if test="age !=null "> age = #{age}, </if>
+        </trim> and age = 199 WHERE  id = #{id}
+    </update>
+
+
+    <select id="query" resultType="student">
+        select * from studenta
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="name !=null">
+                and name like #{name}
+            </if>
+            <if test="age !=null">
+                and age = #{age}
+            </if>
+        </trim>
+    </select>
+
+</mapper>

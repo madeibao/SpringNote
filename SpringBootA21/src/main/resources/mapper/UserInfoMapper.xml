@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.candy.demo.dao.UserInfoMapper" >
+    <resultMap id="BaseResultMap" type="com.candy.demo.bean.UserInfo" >
+        <constructor >
+            <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+            <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="userpwd" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="useraddress" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="usertel" jdbcType="VARCHAR" javaType="java.lang.String" />
+            <arg column="isdelete" jdbcType="INTEGER" javaType="java.lang.Integer" />
+            <arg column="imgsrc" jdbcType="VARCHAR" javaType="java.lang.String" />
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List" >
+    id, username, userpwd, useraddress, usertel, isdelete, imgsrc
+  </sql>
+
+    <select id="getUserInfoes" resultMap="BaseResultMap" parameterType="userinfo" >
+        select
+        <include refid="Base_Column_List" />
+        from userinfo
+        <where>
+            <if test="username!=null and username!='' ">
+                username like concat("%",#{username,jdbcType=VARCHAR},"%")
+            </if>
+            <if test="useraddress!=null and useraddress!=''">
+                and useraddress like concat("%",#{useraddress,jdbcType=VARCHAR},"%")
+            </if>
+            and isdelete=0
+        </where>
+
+    </select>
+
+    <select id="login" resultMap="BaseResultMap" parameterType="com.candy.demo.bean.UserInfo" >
+        select
+        <include refid="Base_Column_List" />
+        from userinfo
+        where username = #{username,jdbcType=VARCHAR}
+        and
+        userpwd=#{userpwd,jdbcType=VARCHAR}
+    </select>
+
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from userinfo
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from userinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.candy.demo.bean.UserInfo" >
+    insert into userinfo (id, username, userpwd,
+      useraddress, usertel, isdelete,
+      imgsrc)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR},
+      #{useraddress,jdbcType=VARCHAR}, #{usertel,jdbcType=VARCHAR}, #{isdelete,jdbcType=INTEGER},
+      #{imgsrc,jdbcType=VARCHAR})
+  </insert>
+
+    <insert id="insertSelective" parameterType="com.candy.demo.bean.UserInfo" >
+        insert into userinfo
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="username != null" >
+                username,
+            </if>
+            <if test="userpwd != null" >
+                userpwd,
+            </if>
+            <if test="useraddress != null" >
+                useraddress,
+            </if>
+            <if test="usertel != null" >
+                usertel,
+            </if>
+            <if test="isdelete != null" >
+                isdelete,
+            </if>
+            <if test="imgsrc != null" >
+                imgsrc,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null" >
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="userpwd != null" >
+                #{userpwd,jdbcType=VARCHAR},
+            </if>
+            <if test="useraddress != null" >
+                #{useraddress,jdbcType=VARCHAR},
+            </if>
+            <if test="usertel != null" >
+                #{usertel,jdbcType=VARCHAR},
+            </if>
+            <if test="isdelete != null" >
+                #{isdelete,jdbcType=INTEGER},
+            </if>
+            <if test="imgsrc != null" >
+                #{imgsrc,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.candy.demo.bean.UserInfo" >
+        update userinfo
+        <set >
+            <if test="username != null" >
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="userpwd != null" >
+                userpwd = #{userpwd,jdbcType=VARCHAR},
+            </if>
+            <if test="useraddress != null" >
+                useraddress = #{useraddress,jdbcType=VARCHAR},
+            </if>
+            <if test="usertel != null" >
+                usertel = #{usertel,jdbcType=VARCHAR},
+            </if>
+            <if test="isdelete != null" >
+                isdelete = #{isdelete,jdbcType=INTEGER},
+            </if>
+            <if test="imgsrc != null" >
+                imgsrc = #{imgsrc,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.candy.demo.bean.UserInfo" >
+    update userinfo
+    set username = #{username,jdbcType=VARCHAR},
+      userpwd = #{userpwd,jdbcType=VARCHAR},
+      useraddress = #{useraddress,jdbcType=VARCHAR},
+      usertel = #{usertel,jdbcType=VARCHAR},
+      isdelete = #{isdelete,jdbcType=INTEGER},
+      imgsrc = #{imgsrc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

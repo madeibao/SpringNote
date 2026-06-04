@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="book" class="com.mayuan.spring.Book">
+        <property name="name">
+            <value>时间简史</value>
+        </property>
+        <property name="money">
+            <value> 20 </value>
+        </property>
+    </bean>
+
+    <!--为obj对象里面的自定义类型的属性赋值-->
+    <!--property: 手动赋值-->
+
+    <!--
+    <bean id="Obj" class="com.mayuan.spring.Obj">
+        <property name="book" ref="book"/>
+    </bean>
+    -->
+
+    <!--自动装配
+        autowire="default",不自动装配，不自动为car属性赋值
+         //这里还可以写autowire="no"-->
+
+    <!--
+    <bean id="Obj" class="com.mayuan.spring.Obj" autowire="default">
+    </bean>
+    -->
+
+    <!-- byName装配-->
+
+    <!--
+        <bean id="Obj" class="com.mayuan.spring.Obj" autowire="byName">
+        </bean>
+    -->
+
+
+    <!-- byType来进行装配-->
+    <bean id="Obj" class="com.mayuan.spring.Obj" autowire="byType">
+    </bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
