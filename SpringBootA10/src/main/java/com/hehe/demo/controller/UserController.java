@@ -1,12 +1,14 @@
 package com.hehe.demo.controller;
 
 import com.hehe.demo.pojo.R;
+import com.hehe.demo.pojo.User;
 import com.hehe.demo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @ClassName UserController
@@ -19,11 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user/*")
 public class UserController {
 
-    @Autowired
     UserService userService;
 
+    //
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping("list")
-    public R list() {
+    public R<List<User>> list() {
         try {
             return R.isOk().data(userService.list());
         } catch (Exception e) {
@@ -32,7 +38,7 @@ public class UserController {
     }
 
     @GetMapping("list/{username}")
-    public R listbyname(@PathVariable("username")  String username) {
+    public R<List<User>> listbyname(@PathVariable("username")  String username) {
         try {
             return R.isOk().data(userService.findByUsername(username));
         } catch (Exception e) {
@@ -41,7 +47,7 @@ public class UserController {
     }
 
     @GetMapping("get/{userId}")
-    public R get(@PathVariable("userId") String userId) {
+    public R<User> get(@PathVariable("userId") String userId) {
         try {
             return R.isOk().data(userService.get(userId));
         } catch (Exception e) {
@@ -50,7 +56,7 @@ public class UserController {
     }
 
     @GetMapping("del/{userId}")
-    public R delete(@PathVariable("userId") String userId) {
+    public R<Integer> delete(@PathVariable("userId") String userId) {
         try {
             return R.isOk().data(userService.delete(userId));
         } catch (Exception e) {
