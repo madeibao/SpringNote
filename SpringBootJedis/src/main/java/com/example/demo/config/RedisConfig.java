@@ -45,13 +45,11 @@ public class RedisConfig {
     public JedisPool getJedisPool(){
         JedisPoolConfig jedisPoolConfig=new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxTotal);
-        Long aLong = Long.valueOf(maxWaitMillis.substring(0, maxWaitMillis.length() - 2));
+        long aLong = Long.parseLong(maxWaitMillis.substring(0, maxWaitMillis.length() - 2));
         jedisPoolConfig.setMaxWaitMillis(aLong);
         jedisPoolConfig.setMaxIdle(maxIdle);
         jedisPoolConfig.setMinIdle(minIdle);
-        Integer integer = Integer.valueOf(timeout.substring(0, timeout.length() - 2));
-
-        JedisPool jedisPool=new JedisPool(jedisPoolConfig,host,port,integer,password);
-        return jedisPool;
+        int integer = Integer.parseInt(timeout.substring(0, timeout.length() - 2));
+        return new JedisPool(jedisPoolConfig,host,port,integer,password);
     }
 }
