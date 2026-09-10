@@ -15,7 +15,6 @@ import java.util.Optional;
  * @Description TODO
  * @Version 1.0
  **/
-
 @RestController
 public class ReactRest {
 
@@ -52,7 +51,14 @@ public class ReactRest {
         return Mono.just("body req: " + body);
     }
 
-    // http://localhost:8080/webclienta postman 测试
+    /**
+     * // http://localhost:8080/webclienta postman 测试
+     * 或者用curl来触发，
+     * <p>
+     * curl -v http://localhost:8080/webclienta
+     *
+     * @return
+     */
     @GetMapping(path = "webclienta")
     public Optional<String> getResult() {
         WebClient webClient = WebClient.create("http://127.0.0.1:8080");
@@ -60,10 +66,10 @@ public class ReactRest {
         Body body = new Body();
         body.setName("一灰灰");
         body.setAge(18);
-        Optional<String> ans = webClient.post().uri("/body").contentType(MediaType.APPLICATION_JSON).bodyValue(body).retrieve()
+        Optional<String> ans = webClient.post().uri("/body")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(body).retrieve()
                 .bodyToMono(String.class).blockOptional();
         return ans;
     }
-
-
 }
